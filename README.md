@@ -52,7 +52,7 @@ const mahir = {
 
 ## 🚀 Featured Work
 
-### 🧠 Dhaka Stock Exchange Price Alert System
+### 📈 Dhaka Stock Exchange Price Alert System
 
 ```diff
 + User-specific alerting system
