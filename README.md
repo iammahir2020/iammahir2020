@@ -52,6 +52,17 @@ const mahir = {
 
 ## 🚀 Featured Work
 
+### 🧠 Dhaka Stock Exchange Price Alert System
+
+```diff
++ User-specific alerting system
++ Alert messages sent to users via the Telegram app
+```
+
+⚙️ React • Node.js • Express
+
+---
+
 ### 🧠 Battle of Polashi — Social Deduction Game
 
 ```diff
