@@ -114,19 +114,6 @@ Clean Architecture > Quick hacks
 
 ---
 
-## 📊 GitHub Analytics
-
-<p align="center">
-  <img height="170" src="https://github-readme-stats-sigma-five.vercel.app/api?username=iammahir2020&show_icons=true&theme=radical&hide_border=true" />
-  <img height="170" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=iammahir2020&layout=compact&theme=radical&hide_border=true" />
-</p>
-
-<p align="center">
-  <img height="170" src="https://streak-stats.demolab.com?user=iammahir2020&theme=radical&hide_border=true" />
-</p>
-
----
-
 ## 🌐 Connect
 
 <p align="center">
