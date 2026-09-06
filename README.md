@@ -100,15 +100,6 @@ A full storefront, cart through checkout, with Stripe handling the sensitive pay
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=iammahir2020&show_icons=true&theme=tokyonight&hide_border=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=iammahir2020&layout=compact&theme=tokyonight&hide_border=true" />
-</p>
-
----
-
 ## 🐍 Contribution Graph
 
 <p align="center">
