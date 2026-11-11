@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?size=30&duration=2500&pause=800&center=true&vCenter=true&width=900&color=00F7FF&lines=Hi+%F0%9F%91%8B%2C+I'm+Mahir+Al+Kamal;Software+Engineer+%7C+React+%2B+Node.js+%2B+AWS;Building+BFFs%2C+Dashboards+%26+Agentic+Tools;Exploring+LLM+Systems+%26+System+Design" />
+  <img src="https://readme-typing-svg.demolab.com?size=30&duration=2500&pause=800&center=true&vCenter=true&width=900&color=00F7FF&lines=Hi+%F0%9F%91%8B%2C+I'm+Mahir+Al+Kamal;Software+Engineer+%7C+React+%2B+Next.js+%2B+Node.js;Government+platforms%2C+real-time+apps+%26+AI+tools;Teaching+DSA+%40+IUB+%7C+MSc+CS" />
 </p>
 
 <p align="center">
@@ -8,7 +8,7 @@
 
 <h2 align="center">💻 Software Engineer</h2>
 <p align="center">
-  ⚡ React • Node.js • TypeScript • AWS • FastAPI
+  ⚡ React • Next.js • Node.js • TypeScript • Python • PostgreSQL • AWS
 </p>
 <p align="center">
   🟢 Open to full-time Software Engineer roles
@@ -22,73 +22,96 @@
 const mahir = {
   role: "Software Engineer",
   base: "Dhaka, Bangladesh",
-  daytime: "Building enterprise & government platforms at Penta Global",
-  pushing_into: ["AWS (Lambda, AppSync, EventBridge)", "FastAPI", "PostgreSQL"],
-  alsoDoing: "MSc in CS — researching how LLMs select ML algorithms",
+  experience: "Almost 4 years building React and Node.js apps",
+  work: "Government & enterprise platforms at Penta Global",
+  builds: ["Real-time apps", "AI-in-the-loop tools", "Event-driven backends"],
+  alsoDoing: "MSc in CS at IUB, researching how LLMs pick ML algorithms",
   teaching: "Algorithms & Data Structures labs at IUB",
-  workflow: "Spec-driven, agentic dev with Claude Code"
+  workflow: "Spec-driven development with Claude Code"
 };
 ```
 
 ---
 
-## 🚀 What I Do
+## ✨ Highlights
 
-* ⚡ Build production React + TypeScript applications, from dashboards to national-scale platforms
-* ☁️ Design serverless, event-driven systems on AWS — BFFs, streams, queues with dead-letter handling
-* 🔄 Modernize legacy stacks (Jinja/jQuery → React) without breaking what's already shipped
-* 🧠 Ship small AI-in-the-loop tools — computer vision, local + cloud model routing, RAG
-* 🧱 Work spec-first with Claude Code: plan, build, verify, in that order
+* 🏛️ Worked on national platforms for the **Bangladesh Election Commission** and the **Anti-Corruption Commission**
+* 🤖 Built an AI grading tool with a model I trained, served from FastAPI and piloted in a live class
+* 🔄 Moved legacy Jinja and jQuery screens to React one screen at a time, without stopping feature work
+* 🧑‍🏫 Mentored two interns who were later hired full-time
+
+---
+
+## 🏢 Work
+
+**Penta Global Limited, Dhaka** · Software Engineer · Oct 2023 – Present
+
+* **Neustring:** B2B telecom roaming analytics for a US client. Tables, charts and filtered exports on large datasets, kept fast with server-side pagination and memoized selectors, plus Amazon QuickSight dashboards
+* **Election Management & Online Nomination System:** step-by-step nomination forms that stop a filing from moving forward while its data is incomplete, and role-based screens where every action is traceable for audit
+* **ACC ERP:** role-gated modules and long multi-step forms with drafts that save, so nobody loses half a form
+
+**Independent University, Bangladesh** · Adjunct Faculty & Research Assistant · Part-Time Frontend Developer
+
+* Teach the Algorithms and Data Structures labs in Python
+* Research: *LLM-Based Algorithm Selection for Tabular Medical Datasets* (manuscript in preparation)
 
 ---
 
 ## 🛠️ Tech Arsenal
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,nextjs,ts,js,redux,tailwind,nodejs,express,py,fastapi,postgres,mongodb,dynamodb,aws,docker,git,github,figma&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=js,ts,py,react,nextjs,redux,tailwind,vite,nodejs,express,fastapi,graphql,postgres,mongodb,dynamodb,supabase,pytorch,opencv,aws,docker,githubactions,git,figma&theme=dark" />
 </p>
 
 ---
 
 ## 🚀 Featured Work
 
-### 🧾 Exam Script Mark Scanner
-A tool that lets an instructor grade paper exam scripts by photographing the marks grid and auto-extracting scores into Excel — piloted on a live class. Detection fails loudly rather than risk a wrong mark, and student-ID crops never leave the machine.
+### 🧾 [Exam Script Mark Scanner](https://github.com/iammahir2020/marks-upload)
+Faculty photograph exam script cover pages, and the app reads student IDs and marks and exports the session to Excel. Piloted in a live university class. Detection fails loudly rather than risk a wrong mark, and the teacher confirms every value before it's saved.
 ```diff
-+ OpenCV grid detection + deskew, swappable local-CNN / Tesseract+Gemini recognizers
-+ pytest suite across detection, segmentation, and both recognizer paths
++ OpenCV grid detection and deskew, with a local CNN or Tesseract and a Gemini Vision fallback behind one interface
++ Trained the CNN in PyTorch: 91.8% of handwritten ID digits read correctly vs 44.5% for Tesseract
++ Hosted on AWS with upload checks, rate limiting and an origin guard
++ 259 pytest and 383 Vitest tests
 ```
-⚙️ Python • FastAPI • OpenCV • CNN • Tesseract • Gemini Vision API • React • TypeScript
+⚙️ Python • FastAPI • OpenCV • PyTorch • Gemini API • React • TypeScript • Docker • AWS Lambda
 
-### ☁️ Serverless Backend-for-Frontend on AWS
-Two hands-on BFF builds exploring the same pattern from different angles — one GraphQL-subscription based, one REST plus WebSocket — built to get real production-style AWS experience rather than tutorial experience.
+### 🧠 Battle of Polashi: Real-time Multiplayer Board Game
+An unofficial online version of Polashi, a hidden-role social deduction board game by Playground Inc., built so our group could play from their own phones. The server owns every rule, and each player only receives their own view of the game, so hidden roles never leak.
 ```diff
-+ DynamoDB Streams → AppSync GraphQL subscriptions (CDC pattern)
-+ EventBridge → SQS (with DLQ) → Lambda decoupled write path
-+ Cognito-authorized REST + a custom Lambda JWT authorizer for the WebSocket variant
++ Every Socket.IO event validated with zod; per-seat reconnect tokens put players back in their seat after a refresh
++ Audited it as an attacker and closed what I found: rate limits per socket and per IP, origin checks, message size caps
++ Moved from Firestore to PostgreSQL with check constraints and versioned migrations; live rooms survive a deploy
++ ~70 backend and ~240 frontend tests, plus Playwright runs of a full 5-player game
 ```
-⚙️ AWS CDK • Lambda • DynamoDB • AppSync • API Gateway • EventBridge • SQS • Cognito
+⚙️ Node.js • Express 5 • Socket.IO • PostgreSQL (Supabase) • React 19 • TypeScript • Vite • Playwright
+🔗 [Backend](https://github.com/iammahir2020/polashi_game_backend) · [Frontend](https://github.com/iammahir2020/polashi_game_frontend)
 
-### 📈 DSE Market Monitoring & Price Alerts
-A live price-alert platform for the Dhaka Stock Exchange — set a per-symbol threshold once, get notified the moment it's crossed, no refreshing and no polling.
+### 📈 DSE Market Monitor
+Stock alerts for the Dhaka Stock Exchange. Investors set price, percentage or volume alerts, and the service checks them every two minutes and notifies users on a live dashboard and on Telegram.
 ```diff
-+ Per-user threshold rules evaluated against a live price feed
-+ Alerts pushed over Telegram (Bot API) and a WebSocket-backed dashboard
++ Per-alert cooldowns and de-duplication so users aren't spammed
++ Phone OTP login with hashed, expiring codes, JWT sessions and authenticated WebSockets
++ Telegram bot linked by one-time deep links, with a secret-verified webhook
 ```
-⚙️ Node.js • Express • MongoDB • WebSockets • Telegram Bot API • React
+⚙️ Node.js • Express • MongoDB • WebSockets • Telegram Bot API • React • TypeScript • Recharts
+🔗 [Backend](https://github.com/iammahir2020/dse-monitor-backend) · [Frontend](https://github.com/iammahir2020/dse-monitor-frontend)
 
-### 🧠 Battle of Polashi — Real-time Multiplayer Board Game
-Server-authoritative by design: every rule and state transition is validated server-side, so the client is a renderer, not a source of truth — closing off the kind of move-forging that's trivial to inject through devtools in a client-trusting game.
+### ☁️ Event-Driven Backend-for-Frontend on AWS
+Two hands-on BFF builds of the same pattern from different angles: one GraphQL-subscription based, one REST plus WebSocket.
 ```diff
-+ Socket.io rooms running multiple concurrent matches off one server process
-+ State broadcast, not client-side computation
++ DynamoDB Streams → AppSync GraphQL subscriptions, pushing every write to open browsers
++ EventBridge → SQS (with a dead-letter queue) → Lambda write path
++ Cognito-protected REST, and a custom Lambda JWT authorizer for the WebSocket version
 ```
-⚙️ Node.js • Socket.io • React • TypeScript • Vite
+⚙️ AWS CDK • SAM • Lambda • DynamoDB • AppSync • API Gateway • EventBridge • SQS • Cognito
+🔗 [CDK build](https://github.com/iammahir2020/bff-practice) · [SAM build](https://github.com/iammahir2020/aws-bff-price-alert)
 
-### 🛒 ZipGrip — E-commerce with Payments
-A full storefront, cart through checkout, with Stripe handling the sensitive payment step so card data never touches the app's own servers or client code.
+### 🛒 ZipGrip: E-commerce with Payments
+A storefront from cart to checkout, with Stripe handling the payment step so card data never touches the app's own servers.
 ```diff
-+ JWT auth + role-based access separating customer and admin experiences
++ JWT auth and role-based access separating customer and admin views
 ```
 ⚙️ React • Node.js • Express • MongoDB • Stripe
 
@@ -96,7 +119,7 @@ A full storefront, cart through checkout, with Stripe handling the sensitive pay
 
 ## 📚 Currently Exploring
 
-`Agentic workflows & MCP` · `LangChain / RAG` · `AWS (deeper)` · `System design`
+`Agentic workflows & MCP` · `LangChain / RAG` · `NestJS` · `Next.js caching` · `System design`
 
 ---
 
