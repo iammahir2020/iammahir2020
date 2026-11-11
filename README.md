@@ -69,6 +69,51 @@ const mahir = {
 
 ### 🧾 [Exam Script Mark Scanner](https://github.com/iammahir2020/marks-upload)
 Faculty photograph exam script cover pages, and the app reads student IDs and marks and exports the session to Excel. Piloted in a live university class. Detection fails loudly rather than risk a wrong mark, and the teacher confirms every value before it's saved.
+
+🌐 **[Live demo](https://d2n2meq17rr1oi.cloudfront.net)**
+
+<p align="center">
+  <img src="assets/scanner-demo.gif" alt="Scanner walkthrough: create a section, start a quiz, capture a script, review the values, see results" width="300"/>
+</p>
+
+<details>
+<summary><b>How it works</b> (architecture)</summary>
+
+```mermaid
+flowchart LR
+    T["📱 Teacher's phone<br/>React + TypeScript PWA"]
+    Q[("IndexedDB<br/>session + upload queue")]
+    X["📊 Excel export<br/>(in the browser)"]
+
+    subgraph AWS["AWS"]
+        CF["CloudFront"]
+        S3[("S3<br/>static site")]
+        AG["API Gateway"]
+        subgraph L["Lambda container · FastAPI"]
+            G["Upload checks<br/>rate limit · origin secret"]
+            D["OpenCV<br/>find + straighten grid,<br/>cut cells"]
+            R{{"Recognizer<br/>(one interface)"}}
+            C["Local CNN<br/>ONNX · default"]
+            RM["Remote<br/>Tesseract + Gemini Vision"]
+        end
+        CW["CloudWatch + X-Ray"]
+    end
+
+    T <--> Q
+    T -->|"photo of marks grid"| CF
+    CF --> S3
+    CF -->|"/api + secret header"| AG --> G --> D --> R
+    R --> C
+    R --> RM
+    R -->|"ID, serial, marks,<br/>low-confidence flags"| T
+    T -->|"teacher confirms<br/>every value"| X
+    L -.-> CW
+```
+
+The recognizer is picked once at startup, so the pipeline never cares which one is running. The local CNN became the default after it beat Tesseract on real class photos, and it needs no network and has no rate limit to hit mid-class.
+
+</details>
+
 ```diff
 + OpenCV grid detection and deskew, with a local CNN or Tesseract and a Gemini Vision fallback behind one interface
 + Trained the CNN in PyTorch: 91.8% of handwritten ID digits read correctly vs 44.5% for Tesseract
@@ -79,6 +124,13 @@ Faculty photograph exam script cover pages, and the app reads student IDs and ma
 
 ### 🧠 Battle of Polashi: Real-time Multiplayer Board Game
 An unofficial online version of Polashi, a hidden-role social deduction board game by Playground Inc., built so our group could play from their own phones. The server owns every rule, and each player only receives their own view of the game, so hidden roles never leak.
+
+🌐 **[Play it live](https://the-great-polashi-game.vercel.app)**
+
+<p align="center">
+  <img src="assets/polashi-demo.gif" alt="A six-player game of Polashi from create room to game over" width="640"/>
+</p>
+
 ```diff
 + Every Socket.IO event validated with zod; per-seat reconnect tokens put players back in their seat after a refresh
 + Audited it as an attacker and closed what I found: rate limits per socket and per IP, origin checks, message size caps
